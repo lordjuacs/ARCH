@@ -41,15 +41,19 @@
 \centering
 \includegraphics[scale=0.5]{5.png} 
 \end{figure}
-\item XOR: el diagrama con menos compuertas es el siguiente.
+\item XOR: Partiendo de la Suma de Productos podemos llegar a la forma simplificada del diagrama con NANDs.
+ $Y = A\overline{B}+\overline{A}B=
+ A\overline{B} + \overline{A}A + \overline{A}B + \overline{B}B=A(\overline{A}+\overline{B}) + B(\overline{A}+\overline{B}) = \overline{\overline{A(\overline{AB})}}+\overline{\overline{B(\overline{AB})}} = \overline{\overline{A(\overline{AB})} \    
+ \overline{B(\overline{AB})}}$
+ 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{6.png} 
 \end{figure}
-\\Sin embargo, una opción más sencilla de obtener es con el Teorema de De Morgan y la Suma de Productos. De esta manera:\\ $Y = \overline{A}B + \overline{B}A = \overline{(\overline{\overline{A}}+\overline{B})(\overline{A}+\overline{\overline{B}})} = \overline{(\overline{B}+A)(\overline{A}+B)}$
+\item XNOR: se aplica un NAND a la respuesta del XOR.
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.45]{7.png} 
+\includegraphics[scale=0.5]{7.png} 
 \end{figure}
 
 \end{itemize}

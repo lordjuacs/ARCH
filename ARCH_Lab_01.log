@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.19)  22 APR 2020 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.19)  22 APR 2020 20:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,35 +437,43 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip46
+\enit@outerparindent=\dimen114
+\enit@toks=\toks23
+\enit@inbox=\box28
+\enitdp@description=\count99
+)
 (./ARCH_Lab_01.aux)
 \openout1 = `ARCH_Lab_01.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen115
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count100
+\scratchdimen=\dimen115
+\scratchbox=\box29
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen116
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -522,12 +530,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+LaTeX Font Info:    Try loading font information for U+msb on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -535,73 +543,124 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <1.png, id=1, 695.59875pt x 302.12875pt>
 File: 1.png Graphic file (type png)
 <use 1.png>
-Package pdftex.def Info: 1.png  used on input line 18.
+Package pdftex.def Info: 1.png  used on input line 20.
 (pdftex.def)             Requested size: 278.23457pt x 120.84935pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 23.
+<0.png, id=3, 695.59875pt x 302.12875pt>
+File: 0.png Graphic file (type png)
+<use 0.png>
+Package pdftex.def Info: 0.png  used on input line 26.
+(pdftex.def)             Requested size: 278.23457pt x 120.84935pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 31.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
-<2.png, id=3, 242.9075pt x 62.2325pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
+<2.png, id=4, 242.9075pt x 62.2325pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
-Package pdftex.def Info: 2.png  used on input line 26.
+Package pdftex.def Info: 2.png  used on input line 34.
 (pdftex.def)             Requested size: 121.45345pt x 31.11617pt.
-<3.png, id=4, 322.20375pt x 61.22874pt>
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./1.png> <./0.png>]
+<3.png, id=16, 322.20375pt x 61.22874pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
-Package pdftex.def Info: 3.png  used on input line 31.
+Package pdftex.def Info: 3.png  used on input line 39.
 (pdftex.def)             Requested size: 161.10147pt x 30.61429pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--34
+Underfull \hbox (badness 10000) in paragraph at lines 36--42
 
  []
 
-<4.png, id=5, 372.39125pt x 142.5325pt>
+<4.png, id=17, 372.39125pt x 142.5325pt>
 File: 4.png Graphic file (type png)
 <use 4.png>
-Package pdftex.def Info: 4.png  used on input line 37.
+Package pdftex.def Info: 4.png  used on input line 45.
 (pdftex.def)             Requested size: 186.19516pt x 71.26607pt.
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./1.png> <./2.png> <./3.pn
-g>]
-<5.png, id=19, 492.84125pt x 141.52875pt>
+<5.png, id=18, 492.84125pt x 141.52875pt>
 File: 5.png Graphic file (type png)
 <use 5.png>
-Package pdftex.def Info: 5.png  used on input line 42.
+Package pdftex.def Info: 5.png  used on input line 50.
 (pdftex.def)             Requested size: 246.42001pt x 70.76419pt.
-<6.png, id=20, 412.54124pt x 151.56625pt>
+<6.png, id=19, 412.54124pt x 151.56625pt>
 File: 6.png Graphic file (type png)
 <use 6.png>
-Package pdftex.def Info: 6.png  used on input line 51.
+Package pdftex.def Info: 6.png  used on input line 59.
 (pdftex.def)             Requested size: 206.27011pt x 75.78293pt.
-<7.png, id=21, 503.8825pt x 152.57pt>
+<7.png, id=20, 503.8825pt x 152.57pt>
 File: 7.png Graphic file (type png)
 <use 7.png>
-Package pdftex.def Info: 7.png  used on input line 56.
+Package pdftex.def Info: 7.png  used on input line 65.
 (pdftex.def)             Requested size: 251.94063pt x 76.2848pt.
- [2 <./4.png> <./5.png> <./6.png> <./7.png>] (./ARCH_Lab_01.aux) ) 
+[2 <./2.png> <./3.png> <./4.png> <./5.png> <./6.png>]
+Overfull \hbox (26.4163pt too wide) in paragraph at lines 98--111
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--118
+
+ []
+
+
+Overfull \hbox (26.4163pt too wide) in paragraph at lines 121--128
+ [][] 
+ []
+
+[3 <./7.png>]
+<8.png, id=35, 287.0725pt x 181.67876pt>
+File: 8.png Graphic file (type png)
+<use 8.png>
+Package pdftex.def Info: 8.png  used on input line 139.
+(pdftex.def)             Requested size: 172.24483pt x 109.00809pt.
+ [4 <./8.png>] (./ARCH_Lab_01.aux) ) 
 Here is how much of TeX's memory you used:
- 2711 strings out of 494880
- 34088 string characters out of 6179601
- 87672 words of memory out of 5000000
- 5982 multiletter control sequences out of 15000+600000
+ 3007 strings out of 494880
+ 38992 string characters out of 6179601
+ 96804 words of memory out of 5000000
+ 6272 multiletter control sequences out of 15000+600000
  10132 words of font info for 39 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 41i,7n,25p,278b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ARCH_Lab_01.pdf (2 pages, 89861 bytes).
+ 41i,8n,25p,324b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on ARCH_Lab_01.pdf (4 pages, 134789 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

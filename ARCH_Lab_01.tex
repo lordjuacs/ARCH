@@ -5,6 +5,8 @@
 \usepackage{amssymb}
 \usepackage{enumerate}
 \usepackage{graphicx}
+\usepackage{enumitem}
+
 
 
 \title{Lab 01\\Arquitectura de Computadores \\ Sección 2}
@@ -17,8 +19,14 @@
 \centering
 \includegraphics[scale=0.4]{1.png} 
 \end{figure}
+\\
+Si solo se pueden utilizar 2-input XNOR y 2-input AND gates, entonces el diagrama cambia.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{0.png} 
+\end{figure}
 \item Se adjunta un archivo .asc con la simulación del ejercicio anterior.
-\item Los diagramas con logic gates de las funciones booleanas son los \\siguientes:
+\item Los diagramas con NAND gates de las funciones booleanas son los \\siguientes:
 \begin{itemize}
 \item NOT: se divide un input en dos y pasa por un NAND, lo que significa que simplemente se invertirán los posibles casos 0 y 1.
 \begin{figure}[h!]
@@ -51,11 +59,88 @@
 \includegraphics[scale=0.5]{6.png} 
 \end{figure}
 \item XNOR: se aplica un NAND a la respuesta del XOR.
+\\
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{7.png} 
 \end{figure}
 
+
+
 \end{itemize}
+\item 
+\begin{enumerate}[label=(\alph*)]
+
+\item Siguiendo la lógica del ejercicio 1 y si no hay restricciones, se observa que la cantidad de compuertas XNOR es igual a $n$, donde n es el ńumero de bits. Después, se añade una compuerta AND, la que verifica si en efecto  todos los pares de bits son idénticos. Así, se puede decir que
+$$\# \ compuertas = n + 1$$
+Por otra parte, si solo se permiten compuertas de tipo 2-input, entonces
+$$\# \ compuertas = n_{_{XOR}} + (n - 1)_{_{AND}}$$
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+bits & XNOR gate & AND gate&Total\\
+\hline
+8&8&1&9\\
+\hline
+16&16&1&17\\
+\hline
+32&32&1&33\\
+\hline
+64&64&1&65\\
+\hline
+\end{tabular}
+\end{table}
+\item ...
+\item La tabla describe el comportamiento para distintos bits.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Comparator width &2-input XNOR gates &2-input AND gates&Logic Depth\\
+\hline
+8 bits&8&7&4\\
+\hline
+16 bits&16&15&5\\
+\hline
+32 bits&32&31&6\\
+\hline
+64 bits&64&63&7\\
+\hline
+\end{tabular}
+\end{table}
+\\
+\\
+\\
+\\
+\\
+\\
+\item Se puede proponer que $N = 2^i \ , i\in \{0,1,2,3,4,...\}$, entonces la tabla previa se generaliza a:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Comparator width &2-input XNOR gates &2-input AND gates&Logic Depth\\
+\hline
+N bits&N&N - 1& i + 1\\
+\hline
+\end{tabular}
+\end{table}
 \end{enumerate}
+
+\item El SR-Latch es un circuito secuencial simple que almacena 1 bit. Trabaja con dos inputs S y R, y con  dos outputs $Q $ \ y $\overline{Q}$. Se pueden presentar 4 casos:
+\begin{itemize}
+\item $S = 1, R = 1:$ este es el caso ``ideal" o ``callado", ya que el valor de $Q$ será el mismo que el de $Q_{prev}$.
+\item $S = 0, R = 1:$ este es el caso ``reset", ya que el valor de $Q$ será ``bajado" a 0.
+\item $S = 1, R = 0:$ este es el caso ``set", ya que el valor de $Q$ será ``subido" a 1.
+\item $S = 0, R = 0:$ este es el caso ``prohibido" o ``metaestable", ya que el valor de $Q$ será el mismo que el de $\overline{Q}$ y los valores asignados a cada uno dependen de las propiedades eléctricas de los transistores que componen las compuertas, mas no de la lógica.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{8.png} 
+\end{figure}
+
+\end{itemize}
+
+\end{enumerate}
+
 \end{document}

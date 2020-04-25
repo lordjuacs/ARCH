@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.19)  22 APR 2020 20:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.19)  24 APR 2020 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -445,22 +445,21 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box28
 \enitdp@description=\count99
 )
-(./ARCH_Lab_01.aux)
+No file ARCH_Lab_01.aux.
 \openout1 = `ARCH_Lab_01.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
@@ -530,137 +529,409 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 15.
+LaTeX Font Info:    Try loading font information for U+msa on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 15.
+LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<1.png, id=1, 695.59875pt x 302.12875pt>
-File: 1.png Graphic file (type png)
-<use 1.png>
-Package pdftex.def Info: 1.png  used on input line 20.
-(pdftex.def)             Requested size: 278.23457pt x 120.84935pt.
-<0.png, id=3, 695.59875pt x 302.12875pt>
-File: 0.png Graphic file (type png)
-<use 0.png>
-Package pdftex.def Info: 0.png  used on input line 26.
-(pdftex.def)             Requested size: 278.23457pt x 120.84935pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 31.
 
+LaTeX Warning: File `1.png' not found on input line 21.
+
+
+! Package pdftex.def Error: File `1.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \includegraphics[scale=0.4]{1.png}
+                                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `0.png' not found on input line 27.
+
+
+! Package pdftex.def Error: File `0.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \includegraphics[scale=0.4]{0.png}
+                                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `dia11.png' not found on input line 34.
+
+
+! Package pdftex.def Error: File `dia11.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \includegraphics[scale=0.4]{dia11.png}
+                                           
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `plot11.png' not found on input line 39.
+
+
+! Package pdftex.def Error: File `plot11.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 \includegraphics[scale=0.2]{plot11.png}
+                                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `dia12.png' not found on input line 44.
+
+
+! Package pdftex.def Error: File `dia12.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 \includegraphics[scale=0.24]{dia12.png}
+                                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `plot12.png' not found on input line 48.
+
+
+! Package pdftex.def Error: File `plot12.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 \includegraphics[scale=0.2]{plot12.png}
+                                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
-<2.png, id=4, 242.9075pt x 62.2325pt>
-File: 2.png Graphic file (type png)
-<use 2.png>
-Package pdftex.def Info: 2.png  used on input line 34.
-(pdftex.def)             Requested size: 121.45345pt x 31.11617pt.
- [1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./1.png> <./0.png>]
-<3.png, id=16, 322.20375pt x 61.22874pt>
-File: 3.png Graphic file (type png)
-<use 3.png>
-Package pdftex.def Info: 3.png  used on input line 39.
-(pdftex.def)             Requested size: 161.10147pt x 30.61429pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
+LaTeX Warning: File `2.png' not found on input line 56.
+
+
+! Package pdftex.def Error: File `2.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56 \includegraphics[scale=0.5]{2.png}
+                                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: File `3.png' not found on input line 61.
+
+
+! Package pdftex.def Error: File `3.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 \includegraphics[scale=0.5]{3.png}
+                                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--64
 
  []
 
-<4.png, id=17, 372.39125pt x 142.5325pt>
-File: 4.png Graphic file (type png)
-<use 4.png>
-Package pdftex.def Info: 4.png  used on input line 45.
-(pdftex.def)             Requested size: 186.19516pt x 71.26607pt.
-<5.png, id=18, 492.84125pt x 141.52875pt>
-File: 5.png Graphic file (type png)
-<use 5.png>
-Package pdftex.def Info: 5.png  used on input line 50.
-(pdftex.def)             Requested size: 246.42001pt x 70.76419pt.
-<6.png, id=19, 412.54124pt x 151.56625pt>
-File: 6.png Graphic file (type png)
-<use 6.png>
-Package pdftex.def Info: 6.png  used on input line 59.
-(pdftex.def)             Requested size: 206.27011pt x 75.78293pt.
-<7.png, id=20, 503.8825pt x 152.57pt>
-File: 7.png Graphic file (type png)
-<use 7.png>
-Package pdftex.def Info: 7.png  used on input line 65.
-(pdftex.def)             Requested size: 251.94063pt x 76.2848pt.
-[2 <./2.png> <./3.png> <./4.png> <./5.png> <./6.png>]
-Overfull \hbox (26.4163pt too wide) in paragraph at lines 98--111
+
+LaTeX Warning: File `6.png' not found on input line 71.
+
+
+! Package pdftex.def Error: File `6.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 \includegraphics[scale=0.5]{6.png}
+                                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[2]
+
+LaTeX Warning: File `7.png' not found on input line 78.
+
+
+! Package pdftex.def Error: File `7.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 \includegraphics[scale=0.5]{7.png}
+                                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `comparator.png' not found on input line 84.
+
+
+! Package pdftex.def Error: File `comparator.png' not found: using draft settin
+g.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 \includegraphics[scale=0.35]{comparator.png}
+                                                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--112
+
+ []
+
+
+LaTeX Warning: File `8bit.png' not found on input line 115.
+
+
+! Package pdftex.def Error: File `8bit.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.115 \includegraphics[scale=1]{8bit.png}
+                                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `16bit.png' not found on input line 119.
+
+
+! Package pdftex.def Error: File `16bit.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 \includegraphics[scale=1]{16bit.png}
+                                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `32bit.png' not found on input line 123.
+
+
+! Package pdftex.def Error: File `32bit.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.123 \includegraphics[scale=1]{32bit.png}
+                                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `64bit.png' not found on input line 127.
+
+
+! Package pdftex.def Error: File `64bit.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 \includegraphics[scale=1]{64bit.png}
+                                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3]
+Overfull \hbox (26.4163pt too wide) in paragraph at lines 134--147
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--118
-
- []
-
-
-Overfull \hbox (26.4163pt too wide) in paragraph at lines 121--128
+Overfull \hbox (26.4163pt too wide) in paragraph at lines 152--159
  [][] 
  []
 
-[3 <./7.png>]
-<8.png, id=35, 287.0725pt x 181.67876pt>
-File: 8.png Graphic file (type png)
-<use 8.png>
-Package pdftex.def Info: 8.png  used on input line 139.
-(pdftex.def)             Requested size: 172.24483pt x 109.00809pt.
- [4 <./8.png>] (./ARCH_Lab_01.aux) ) 
+[4]
+
+LaTeX Warning: File `8.png' not found on input line 171.
+
+
+! Package pdftex.def Error: File `8.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 \includegraphics[scale=0.6]{8.png}
+                                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[5]
+
+LaTeX Warning: File `dia5.png' not found on input line 176.
+
+
+! Package pdftex.def Error: File `dia5.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.176 \includegraphics[scale=0.2]{dia5.png}
+                                           
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `plot5.png' not found on input line 180.
+
+
+! Package pdftex.def Error: File `plot5.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.180 \includegraphics[scale=0.2]{plot5.png}
+                                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `9.png' not found on input line 190.
+
+
+! Package pdftex.def Error: File `9.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.190 \includegraphics[scale=0.35]{9.png}
+                                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `dia6.png' not found on input line 194.
+
+
+! Package pdftex.def Error: File `dia6.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.194 \includegraphics[scale=0.25]{dia6.png}
+                                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `plot6.png' not found on input line 198.
+
+
+! Package pdftex.def Error: File `plot6.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 \includegraphics[scale=0.2]{plot6.png}
+                                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6] [7] (./ARCH_Lab_01.aux) ) 
 Here is how much of TeX's memory you used:
- 3007 strings out of 494880
- 38992 string characters out of 6179601
- 96804 words of memory out of 5000000
- 6272 multiletter control sequences out of 15000+600000
- 10132 words of font info for 39 fonts, out of 8000000 for 9000
+ 2983 strings out of 494880
+ 38665 string characters out of 6179601
+ 94817 words of memory out of 5000000
+ 6237 multiletter control sequences out of 15000+600000
+ 10300 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  41i,8n,25p,324b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ARCH_Lab_01.pdf (4 pages, 134789 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ARCH_Lab_01.pdf (7 pages, 103606 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.19)  24 APR 2020 22:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.19)  24 APR 2020 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -448,18 +448,18 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 (./ARCH_Lab_01.aux)
 \openout1 = `ARCH_Lab_01.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -530,12 +530,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 15.
+LaTeX Font Info:    Try loading font information for U+msa on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 15.
+LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -543,40 +543,40 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <1.png, id=1, 695.59875pt x 302.12875pt>
 File: 1.png Graphic file (type png)
 <use 1.png>
-Package pdftex.def Info: 1.png  used on input line 20.
+Package pdftex.def Info: 1.png  used on input line 21.
 (pdftex.def)             Requested size: 278.23457pt x 120.84935pt.
 <0.png, id=3, 695.59875pt x 302.12875pt>
 File: 0.png Graphic file (type png)
 <use 0.png>
-Package pdftex.def Info: 0.png  used on input line 26.
+Package pdftex.def Info: 0.png  used on input line 27.
 (pdftex.def)             Requested size: 278.23457pt x 120.84935pt.
 <dia11.png, id=4, 904.37875pt x 439.6425pt>
 File: dia11.png Graphic file (type png)
 <use dia11.png>
-Package pdftex.def Info: dia11.png  used on input line 33.
+Package pdftex.def Info: dia11.png  used on input line 34.
 (pdftex.def)             Requested size: 361.7451pt x 175.85388pt.
 
-Overfull \hbox (1.7451pt too wide) in paragraph at lines 33--34
+Overfull \hbox (1.7451pt too wide) in paragraph at lines 34--35
  [][] 
  []
 
 <plot11.png, id=5, 1606.0pt x 903.375pt>
 File: plot11.png Graphic file (type png)
 <use plot11.png>
-Package pdftex.def Info: plot11.png  used on input line 38.
+Package pdftex.def Info: plot11.png  used on input line 39.
 (pdftex.def)             Requested size: 321.19432pt x 180.6718pt.
 <dia12.png, id=6, 1219.55624pt x 696.6025pt>
 File: dia12.png Graphic file (type png)
 <use dia12.png>
-Package pdftex.def Info: dia12.png  used on input line 43.
+Package pdftex.def Info: dia12.png  used on input line 44.
 (pdftex.def)             Requested size: 292.69948pt x 167.188pt.
 <plot12.png, id=7, 1606.0pt x 903.375pt>
 File: plot12.png Graphic file (type png)
 <use plot12.png>
-Package pdftex.def Info: plot12.png  used on input line 47.
+Package pdftex.def Info: plot12.png  used on input line 48.
 (pdftex.def)             Requested size: 321.19432pt x 180.6718pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--49
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
@@ -590,51 +590,51 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./1.png> <./0.png>]
 [2 <./dia11.png> <./plot11.png> <./dia12.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 52.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
 <2.png, id=22, 242.9075pt x 62.2325pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
-Package pdftex.def Info: 2.png  used on input line 55.
+Package pdftex.def Info: 2.png  used on input line 56.
 (pdftex.def)             Requested size: 121.45345pt x 31.11617pt.
 <3.png, id=23, 322.20375pt x 61.22874pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
-Package pdftex.def Info: 3.png  used on input line 60.
+Package pdftex.def Info: 3.png  used on input line 61.
 (pdftex.def)             Requested size: 161.10147pt x 30.61429pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--63
+Underfull \hbox (badness 10000) in paragraph at lines 58--64
 
  []
 
 <6.png, id=24, 412.54124pt x 151.56625pt>
 File: 6.png Graphic file (type png)
 <use 6.png>
-Package pdftex.def Info: 6.png  used on input line 70.
+Package pdftex.def Info: 6.png  used on input line 71.
 (pdftex.def)             Requested size: 206.27011pt x 75.78293pt.
 [3 <./plot12.png> <./2.png> <./3.png> <./6.png>]
 <7.png, id=32, 503.8825pt x 152.57pt>
 File: 7.png Graphic file (type png)
 <use 7.png>
-Package pdftex.def Info: 7.png  used on input line 77.
+Package pdftex.def Info: 7.png  used on input line 78.
 (pdftex.def)             Requested size: 251.94063pt x 76.2848pt.
 <comparator.png, id=33, 1115.16624pt x 663.47874pt>
 File: comparator.png Graphic file (type png)
 <use comparator.png>
-Package pdftex.def Info: comparator.png  used on input line 83.
+Package pdftex.def Info: comparator.png  used on input line 84.
 (pdftex.def)             Requested size: 390.31404pt x 232.22102pt.
 
-Overfull \hbox (30.31404pt too wide) in paragraph at lines 83--84
+Overfull \hbox (30.31404pt too wide) in paragraph at lines 84--85
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--111
+Underfull \hbox (badness 10000) in paragraph at lines 93--112
 
  []
 
@@ -644,81 +644,81 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <8bit.png, id=34, 202.7575pt x 82.3075pt>
 File: 8bit.png Graphic file (type png)
 <use 8bit.png>
-Package pdftex.def Info: 8bit.png  used on input line 114.
+Package pdftex.def Info: 8bit.png  used on input line 115.
 (pdftex.def)             Requested size: 202.757pt x 82.30728pt.
 <16bit.png, id=35, 201.75375pt x 82.3075pt>
 File: 16bit.png Graphic file (type png)
 <use 16bit.png>
-Package pdftex.def Info: 16bit.png  used on input line 118.
+Package pdftex.def Info: 16bit.png  used on input line 119.
 (pdftex.def)             Requested size: 201.75325pt x 82.30728pt.
 <32bit.png, id=36, 202.7575pt x 82.3075pt>
 File: 32bit.png Graphic file (type png)
 <use 32bit.png>
-Package pdftex.def Info: 32bit.png  used on input line 122.
+Package pdftex.def Info: 32bit.png  used on input line 123.
 (pdftex.def)             Requested size: 202.757pt x 82.30728pt.
 <64bit.png, id=37, 201.75375pt x 81.30376pt>
 File: 64bit.png Graphic file (type png)
 <use 64bit.png>
-Package pdftex.def Info: 64bit.png  used on input line 126.
+Package pdftex.def Info: 64bit.png  used on input line 127.
 (pdftex.def)             Requested size: 201.75325pt x 81.30354pt.
 [4 <./7.png> <./comparator.png>] [5 <./8bit.png> <./16bit.png> <./32bit.png> <.
 /64bit.png>]
-Overfull \hbox (26.4163pt too wide) in paragraph at lines 133--146
+Overfull \hbox (26.4163pt too wide) in paragraph at lines 134--147
  [][] 
  []
 
 
-Overfull \hbox (26.4163pt too wide) in paragraph at lines 151--158
+Overfull \hbox (26.4163pt too wide) in paragraph at lines 152--159
  [][] 
  []
 
 <8.png, id=51, 287.0725pt x 181.67876pt>
 File: 8.png Graphic file (type png)
 <use 8.png>
-Package pdftex.def Info: 8.png  used on input line 170.
+Package pdftex.def Info: 8.png  used on input line 171.
 (pdftex.def)             Requested size: 172.24483pt x 109.00809pt.
 [6 <./8.png>]
 <dia5.png, id=57, 1472.50125pt x 641.39626pt>
 File: dia5.png Graphic file (type png)
 <use dia5.png>
-Package pdftex.def Info: dia5.png  used on input line 175.
+Package pdftex.def Info: dia5.png  used on input line 176.
 (pdftex.def)             Requested size: 294.49504pt x 128.27698pt.
 <plot5.png, id=58, 1606.0pt x 903.375pt>
 File: plot5.png Graphic file (type png)
 <use plot5.png>
-Package pdftex.def Info: plot5.png  used on input line 179.
+Package pdftex.def Info: plot5.png  used on input line 180.
 (pdftex.def)             Requested size: 321.19432pt x 180.6718pt.
 <9.png, id=59, 1064.97874pt x 283.0575pt>
 File: 9.png Graphic file (type png)
 <use 9.png>
-Package pdftex.def Info: 9.png  used on input line 189.
+Package pdftex.def Info: 9.png  used on input line 190.
 (pdftex.def)             Requested size: 372.74814pt x 99.0716pt.
 
-Overfull \hbox (12.74814pt too wide) in paragraph at lines 189--190
+Overfull \hbox (12.74814pt too wide) in paragraph at lines 190--191
  [][] 
  []
 
 <dia6.png, id=60, 1452.42625pt x 583.17876pt>
 File: dia6.png Graphic file (type png)
 <use dia6.png>
-Package pdftex.def Info: dia6.png  used on input line 193.
+Package pdftex.def Info: dia6.png  used on input line 194.
 (pdftex.def)             Requested size: 363.10567pt x 145.79433pt.
 
-Overfull \hbox (3.10567pt too wide) in paragraph at lines 193--194
+Overfull \hbox (3.10567pt too wide) in paragraph at lines 194--195
  [][] 
  []
 
 <plot6.png, id=61, 1606.0pt x 903.375pt>
 File: plot6.png Graphic file (type png)
 <use plot6.png>
-Package pdftex.def Info: plot6.png  used on input line 197.
+Package pdftex.def Info: plot6.png  used on input line 198.
 (pdftex.def)             Requested size: 321.19432pt x 180.6718pt.
 [7 <./dia5.png> <./plot5.png> <./9.png>] [8 <./dia6.png> <./plot6.png>]
 (./ARCH_Lab_01.aux) ) 
 Here is how much of TeX's memory you used:
  3067 strings out of 494880
  39800 string characters out of 6179601
- 95804 words of memory out of 5000000
+ 95817 words of memory out of 5000000
  6320 multiletter control sequences out of 15000+600000
  10132 words of font info for 39 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -730,7 +730,7 @@ mi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ARCH_Lab_01.pdf (8 pages, 857884 bytes).
+Output written on ARCH_Lab_01.pdf (8 pages, 857836 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream

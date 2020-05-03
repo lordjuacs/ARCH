@@ -1,0 +1,80 @@
+$date
+	Sat May  2 18:56:38 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module demux16_1x2_tv $end
+$var wire 16 ! y1 [15:0] $end
+$var wire 16 " y0 [15:0] $end
+$var reg 16 # D0 [15:0] $end
+$var reg 1 $ s $end
+$scope module g $end
+$var wire 16 % D0 [15:0] $end
+$var wire 1 $ s $end
+$var wire 16 & y1 [15:0] $end
+$var wire 16 ' y0 [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 '
+b0 &
+b1 %
+0$
+b1 #
+b1 "
+b0 !
+$end
+#1
+b0 "
+b0 '
+b10 !
+b10 &
+b10 #
+b10 %
+1$
+#2
+b11 "
+b11 '
+b0 !
+b0 &
+b11 #
+b11 %
+0$
+#3
+b0 "
+b0 '
+b100 !
+b100 &
+b100 #
+b100 %
+1$
+#4
+b101 "
+b101 '
+b0 !
+b0 &
+b101 #
+b101 %
+0$
+#5
+b0 "
+b0 '
+b110 !
+b110 &
+b110 #
+b110 %
+1$
+#6
+b111 "
+b111 '
+b0 !
+b0 &
+b111 #
+b111 %
+0$

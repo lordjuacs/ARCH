@@ -15,9 +15,7 @@ module demux16_1x8_tb;
 	end
 	always #1 s[0] = !s[0];
 	always #2 s[1] = !s[1];
-	always #4 s[2] = !s[2];
-	//always #1 D0 = D0 + 1;	
-	
+	always #4 s[2] = !s[2];	
 	initial begin
 		$dumpfile("demux16_1x8.vcd");	
 		$dumpvars;

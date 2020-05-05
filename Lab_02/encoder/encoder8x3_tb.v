@@ -11,7 +11,8 @@ module encoder8x3_tb;
 		#9 $finish;
 	end
 	initial begin
-		$monitor("%2d:\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b",$time,ena,d[7],d[6],d[5],d[4],d[3],d[2],d[1],d[0],n[2],n[1],n[0]);
+		$monitor("%2d:\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b",
+$time,ena,d[7],d[6],d[5],d[4],d[3],d[2],d[1],d[0],n[2],n[1],n[0]);
 	end
 	initial begin	
 	#1 d = 8'b1;	

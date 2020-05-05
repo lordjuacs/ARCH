@@ -5,5 +5,5 @@ module mux16_2x1(a, b, s, y);
 
 	output [15:0]y;
 
-	assign y = s? a : b;
+	assign y = s? b : a;
 endmodule

@@ -12,13 +12,14 @@ module decoder3x8_tb	;
 		#8 $finish;
 	end
 	initial begin
-		$monitor("%2d:\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b",$time,ena,n[2],n[1],n[0],d[7],d[6],d[5],d[4],d[3],d[2],d[1],d[0]);
+$monitor("%2d:\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b",
+$time,ena,n[2],n[1],n[0],d[7],d[6],d[5],d[4],d[3],d[2],d[1],d[0]);
 	end
 	always #1 n[0] = !n[0];
 	always #2 n[1] = !n[1];
 	always #4 n[2] = !n[2];
 	always #8 ena = !ena;
-	always #8 n = 3'b???;
+	always #8 n = 3'bXXX;
 	
 	initial begin
 		$dumpfile("decoder3x8.vcd");	

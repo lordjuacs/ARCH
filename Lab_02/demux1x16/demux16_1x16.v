@@ -1,0 +1,21 @@
+module demux16_1x16(D0, s, y0, y1, y2, y3, y4, y5, y6, y7,y8,y9,y10,y11,y12,y13,y14,y15); 
+	input [15:0] D0; 
+	input [3:0]s; 
+	output [15:0]  y0, y1, y2, y3, y4, y5, y6, y7,y8,y9,y10,y11,y12,y13,y14,y15;
+	assign y0 = (s == 4'b0000) ? D0 : 16'b0; 
+	assign y1 = (s == 4'b0001) ? D0 : 16'b0; 
+	assign y2 = (s == 4'b0010) ? D0 : 16'b0; 
+	assign y3 = (s == 4'b0011) ? D0 : 16'b0; 
+	assign y4 = (s == 4'b0100) ? D0 : 16'b0; 
+	assign y5 = (s == 4'b0101) ? D0 : 16'b0; 
+	assign y6 = (s == 4'b0110) ? D0 : 16'b0; 
+	assign y7 = (s == 4'b0111) ? D0 : 16'b0;
+	assign y8 = (s == 4'b1000) ? D0 : 16'b0; 
+	assign y9 = (s == 4'b1001) ? D0 : 16'b0; 
+	assign y10 = (s == 4'b1010) ? D0 : 16'b0; 
+	assign y11 = (s == 4'b1011) ? D0 : 16'b0; 
+	assign y12 = (s == 4'b1100) ? D0 : 16'b0; 
+	assign y13 = (s == 4'b1101) ? D0 : 16'b0; 
+	assign y14 = (s == 4'b1110) ? D0 : 16'b0; 
+	assign y15 = (s == 4'b1111) ? D0 : 16'b0; 
+endmodule 

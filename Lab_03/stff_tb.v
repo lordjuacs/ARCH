@@ -1,8 +1,8 @@
 `timescale 1ns/1ns
-module btff_tb;
+module stff_tb;
 	reg prn, t, clk, clrn;
-	inout q, qn;
-	btff g(prn, t, clk, clrn, q, qn);
+	wire q, qn;
+	stff g(prn, t, clk, clrn, q, qn);
 	initial begin
 		$display("time\tprn\tt\tclk\tclrn\tq\tqn");
 		prn <= 1;
@@ -27,7 +27,7 @@ module btff_tb;
 	#1 clk <= ~clk;
 
 	initial begin
-		$dumpfile("btff.vcd");	
+		$dumpfile("stff.vcd");	
 		$dumpvars;
 	end	
 endmodule

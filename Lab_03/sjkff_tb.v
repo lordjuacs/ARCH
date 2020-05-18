@@ -34,7 +34,7 @@ module sjkff_tb;
 	#1 clk <= ~clk;
 
 	initial begin
-		$dumpfile("bskff.vcd");	
+		$dumpfile("sjkff.vcd");	
 		$dumpvars;
 	end	
 endmodule

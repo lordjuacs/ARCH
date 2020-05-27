@@ -1,8 +1,8 @@
-module seven (clk, reset, x1, x2, x3, state, z1, z2, z3);
+module seven (clk, reset, x1, x2, x3, z1, z2, z3);
 	input clk, reset, x1, x2, x3;
 	output z1, z2, z3;
 	
-	output reg [2:0] state;
+	reg [2:0] state;
 	reg [2:0] nextstate;
 
 

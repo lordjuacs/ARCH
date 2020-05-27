@@ -15,7 +15,7 @@ module thunder_tb;
 		$monitor("%2d\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b", $time, clk, reset, left, right, lc, lb, la, ra, rb, rc);
 	end
 	
-	
+		
 	always
 	#1 clk <= ~clk;
 	

@@ -1,5 +1,5 @@
-module cero(a, y);
-	input [31:0] a;
+module cero #(parameter n = 32)(a, y);
+	input [n-1:0] a;
 	output reg y;
 	always @(*)begin
 	if(a==32'b0)

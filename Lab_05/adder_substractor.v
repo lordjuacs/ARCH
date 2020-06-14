@@ -1,8 +1,8 @@
-module adder_substractor(a, b, s, y);
-	input [31:0] a, b;
+module adder_substractor #(parameter n = 32)(a, b, s, y);
+	input [n-1:0] a, b;
 	input s;
-	wire [31:0] con;
-	output [31:0] y;
-	mux2x1 first_mux(b, ~b, s, con);
-	adder  first_adder(a, con, s, y);
+	wire [n-1:0] con;
+	output [n-1:0] y;
+	mux2x1 #(.n(n)) first_mux(b, ~b, s, con);
+	adder  #(.n(n)) first_adder(a, con, s, y);
 endmodule

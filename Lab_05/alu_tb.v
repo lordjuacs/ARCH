@@ -1,20 +1,22 @@
 `timescale 1ns/1ns
+
 module alu_tb;
-	reg [31:0] a, b;
+parameter n = 16;
+	reg [n-1:0] a, b;
 	reg [3:0] op;
-	wire [31:0] result;
+	wire [n-1:0] result;
 	wire cero;
 
-	alu g(a, b, op, result, cero);
+	alu #(.n(n)) g(a, b, op, result, cero);
 	initial begin
-		$display("time\t\t\tA\t\t\t\t\tB\t\t\topcode\t\t\tresult\t\t\tZero");
-		a = 32'b100;
-		b = 32'b101;
+		$display("time\topcode\t\t\tA\t\t\t\t\tB\t\t\t\t\tResult\t\t\tZero");
+		a = 32'b101;
+		b = 32'b100;
 		op = 4'b0;
 		#10 $finish;
 	end
 	initial begin
-		$monitor("%2d\t%b\t%b\t%b\t%b\t%b", $time, a, b, op, result, cero);
+		$monitor("%2d\t%b\t%b\t%b\t%b\t%b", $time, op, a, b, result, cero);
 	end
 	
 	initial begin

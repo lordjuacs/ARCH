@@ -1,9 +1,9 @@
-module a_part(a, b, op1, op3, arithout);
-	input [31:0] a, b;
+module a_part  #(parameter n = 32)(a, b, op1, op3, arithout);
+	input [n-1:0] a, b;
 	input op1, op3;
-	wire [31:0] addout;
-	output [31:0] arithout;
-	adder_substractor first_adder_substractor(a, b, op1, addout);
-	stl first_stl(addout, op3, arithout);
+	wire [n-1:0] addout;
+	output [n-1:0] arithout;
+	adder_substractor #(.n(n)) first_adder_substractor(a, b, op1, addout);
+	stl #(.n(n)) first_stl(addout, op3, arithout);
 endmodule
 

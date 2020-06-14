@@ -1,7 +1,7 @@
-module mux2x1 (a, b, s, y);
-	input [31:0] a, b;
+module mux2x1  #(parameter n = 32)(a, b, s, y);
+	input [n-1:0] a, b;
 	input s;
-	output [31:0]y;
+	output [n-1:0]y;
 	assign y = s? b : a;
 endmodule
 

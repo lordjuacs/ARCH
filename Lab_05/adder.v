@@ -1,7 +1,7 @@
-module adder(a, b, s, y);
-	input [31:0] a, b;
+module adder #(parameter n = 32)(a, b, s, y);
+	input [n-1:0] a, b;
 	input s;
-	output reg[31:0] y;
+	output reg[n-1:0] y;
 	always @(*)begin
 	case(s)
 	1'b1:	y <= a + b + 1;

@@ -9,7 +9,7 @@ module snail_tb;
 		reset <= 0;
 		number <= 0;
 
-		#22 $finish;
+		#18 $finish;
 	end
 	initial begin
 		$monitor("%2d\t%b\t%b\t%b\t%b", $time, clk, reset, number, smile);
@@ -19,15 +19,17 @@ module snail_tb;
 	always
 	#1 clk = ~clk;
 	
-	
+	initial begin
+	#1 number <= 1;	
+	end
+
 	initial begin
 	#4 number <= 0;
+	#2 number <= 0;
 	#2 number <= 1;
-	#4 number <= 0;
+	#2 number <= 0;
+	#2 number <= 0;
 	#2 number <= 1;
-	#4 number <= 0;
-	#2 number <= 1;
-
 	end
 
 	initial begin

@@ -4,32 +4,32 @@ module snail(clk, reset, number, smile);
 	
 	reg [1:0] state, nextstate;
 	
-	parameter S0 = 2'b00;
-	parameter S1 = 2'b01;
-	parameter S2 = 2'b10;
-	parameter S3 = 2'b11;
+	parameter a = 2'b00;
+	parameter b = 2'b01;
+	parameter c = 2'b10;
+	parameter d = 2'b11;
 
 	always @ (posedge clk, posedge reset)
-		if (reset)	state <= S0;
+		if (reset)	state <= a;
 		else	state <= nextstate;
 	always @ (*)
 		case (state)
-			S0:	if (number)
-					nextstate = S1;
-				else	nextstate = S0;
-			S1:	if (number)
-					nextstate = S2;
-				else	nextstate = S0;
-			S2:	if (number)
-					nextstate = S2;
-				else	nextstate = S3;
-			S3:	if (number)
-					nextstate = S1;
-				else	nextstate = S0;
-			default: nextstate = S0;
+			a:	if (number)
+					nextstate = b;
+				else	nextstate = a;
+			b:	if (number)
+					nextstate = b;
+				else	nextstate = c;
+			c:	if (number)
+					nextstate = b;
+				else	nextstate = d;
+			d:	if (number)
+					nextstate = b;
+				else	nextstate = a;
+			default: nextstate = a;
 		endcase
 
-assign smile = (number & state==S3);
+assign smile = (number & state==d);
 
 endmodule
 

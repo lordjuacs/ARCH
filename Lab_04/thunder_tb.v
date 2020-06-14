@@ -4,15 +4,15 @@ module thunder_tb;
 	wire la, lb, lc, ra, rb, rc;
 	thunder g(left, right, reset, clk, la, lb, lc, ra, rb, rc);
 	initial begin
-		$display("time\tclk\treset\tleft\tright\tlc\tlb\tla\tra\trb\trc");
+		$display("time\tclk\treset\tleft\tright\tstate\tlc\tlb\tla\tra\trb\trc");
 		clk <= 0;
 		reset <= 0;
 		left <= 0;
 		right <= 0;
-		#22 $finish;
+		#26 $finish;
 	end
 	initial begin
-		$monitor("%2d\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b", $time, clk, reset, left, right, lc, lb, la, ra, rb, rc);
+		$monitor("%2d\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b\t%b", $time, clk, reset, left, right, g.state, lc, lb, la, ra, rb, rc);
 	end
 	
 		
@@ -32,9 +32,11 @@ module thunder_tb;
 	initial begin
 	#19 left <= 1;
 	#0 right <= 1; 
-	#2 reset <= 1;
-	#0 left <= 0;
+	#1 left <= 0;
 	#0 right <= 0;
+	#3 left <= 1;
+	#1 left <= 0;
+	#1 reset <= 1;
 	#1 reset <= 0;
 	end
 	

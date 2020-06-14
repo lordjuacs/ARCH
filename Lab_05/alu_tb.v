@@ -1,7 +1,7 @@
 `timescale 1ns/1ns
 
 module alu_tb;
-parameter n = 16;
+parameter n = 32;
 	reg [n-1:0] a, b;
 	reg [3:0] op;
 	wire [n-1:0] result;
@@ -10,8 +10,8 @@ parameter n = 16;
 	alu #(.n(n)) g(a, b, op, result, cero);
 	initial begin
 		$display("time\topcode\t\t\tA\t\t\t\t\tB\t\t\t\t\tResult\t\t\tZero");
-		a = 32'b101;
-		b = 32'b100;
+		a = 'b101;
+		b = 'b100;
 		op = 4'b0;
 		#10 $finish;
 	end

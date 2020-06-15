@@ -10,10 +10,10 @@ parameter n = 32;
 	alu #(.n(n)) g(a, b, op, result, cero);
 	initial begin
 		$display("time\topcode\t\t\tA\t\t\t\t\tB\t\t\t\t\tResult\t\t\tZero");
-		a = 'b101;
-		b = 'b100;
+		a = 'b100;
+		b = 'b101;
 		op = 4'b0;
-		#10 $finish;
+		#16 $finish;
 	end
 	initial begin
 		$monitor("%2d\t%b\t%b\t%b\t%b\t%b", $time, op, a, b, result, cero);
@@ -21,13 +21,22 @@ parameter n = 32;
 	
 	initial begin
 	#1 op = 4'b0010;
-	#1 op = 4'b0010;	
 	#1 op = 4'b0100;	
 	#1 op = 4'b0101;	
 	#1 op = 4'b0110;	
 	#1 op = 4'b0111;	
 	#1 op = 4'b1010;
-	#1 op = 4'b1111;		
+	#1 op = 4'b1111;
+	#1 a = b;
+	#0 b = 'b100;
+	#0 op = 4'b0;	
+	#1 op = 4'b0010;
+	#1 op = 4'b0100;	
+	#1 op = 4'b0101;	
+	#1 op = 4'b0110;	
+	#1 op = 4'b0111;	
+	#1 op = 4'b1010;
+	#1 op = 4'b1111;
 	end
 
 	initial begin

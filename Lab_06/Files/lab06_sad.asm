@@ -2,7 +2,8 @@
 # Sum of Absolute Differences Algorithm
 #
 # Authors: 
-#	X Y, Z Q 
+#	Paolo Morey
+#	Joaquin Ramirez
 #
 #
 
@@ -124,7 +125,7 @@ recursive_sum:
         addi $t0, $a1, -1       # Compute size - 1
         sw   $t0, 0($sp)        # Save size - 1 to stack
         sw   $ra, 4($sp)        # Save return address
-        bne  $a1, $zero, else   # size == 0 ?
+        bne  $a1, $0, else   # size == 0 ?
         addi  $v0, $0, 0        # If size == 0, set return value to 0
         addi $sp, $sp, 8        # Adjust sp
         jr $ra                  # Return

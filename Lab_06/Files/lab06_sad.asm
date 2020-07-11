@@ -24,6 +24,7 @@ main:
 	     sw		$t0, 0($s0)
 	     addi   $t0, $0, 16	# left_image[1]		
 	     sw      $t0, 4($s0)
+	     # TODO1: initilize the rest of the memory.
 	     addi   $t0, $0, 7	# left_image[2]		
 	     sw      $t0, 8($s0)
 	     addi   $t0, $0, 1	# left_image[3]		
@@ -57,9 +58,7 @@ main:
 	     sw      $t0, 64($s0)
 	     addi   $t0, $0, 11	# right_image[8]		
 	     sw      $t0, 68($s0)
-	   
-	     
-	     
+	        
 	# TODO4: Loop over the elements of left_image and right_image
 	
 	addi $s1, $0, 0 # $s1 = i = 0
@@ -72,13 +71,19 @@ main:
 	# of the loop. If so, jump to end_loop:
 	
 loop: beq $s1, $s2, end_loop
+# Load left_image{i} and put the value in the corresponding register
+	# before doing the function call
 	lw $a0, 0($t3)
+	# Load right_image{i} and put the value in the corresponding register
 	lw $a1, 0($t4)
 	addi $t3, $t3, 4 
 	addi $t4, $t4, 4 
+	# Call abs_diff
 	jal abs_diff
+	#Store the returned value in sad_array[i]
 	sw $v0, 0($t5)
 	addi $t5, $t5, 4
+	# Increment variable i and repeat loop:
 	addi $s1, $s1, 1
 	j loop
 
@@ -88,13 +93,11 @@ end_loop:
 	
 	#Calculate the base address of sad_array (first argument
 	#of the function call)and store in the corresponding register   
-	la $t1, 68($s0) # $t1 = &A[17]
+	la $t1, 68($s0) # $t1 = &A[17], one before the register we want
 
-	
 	# Prepare the second argument of the function call: the size of the array
 	add $a1, $0, $s2
 
-	
 	# Call to funtion
 	jal recursive_sum
 	  
@@ -103,30 +106,26 @@ end_loop:
 	add $t2, $0, $v0
 
 	
-
 end:	
 	j	end	# Infinite loop at the end of the program. 
 
 
-
-
-# TODO2: Implement the abs_diff routine here, or use the one provided
+# TODO2: Implement the abs_diff routine here
 
 abs_diff:
 	sub $t1, $a0, $a1
 	abs $v0, $t1
 	jr $ra
 
-# TODO3: Implement the recursive_sum routine here, or use the one provided
-
+# TODO3: Implement the recursive_sum routine here,
 
 recursive_sum:    
 	addi $sp, $sp, -8       	# Adjust sp
         addi $t0, $a1, -1       # Compute size - 1
         sw   $t0, 0($sp)        # Save size - 1 to stack
         sw   $ra, 4($sp)        # Save return address
-        bne  $a1, $0, else   # size == 0 ?
-        addi  $v0, $0, 0        # If size == 0, set return value to 0
+        bne  $a1, $0, else   	# size == 0 ?
+        addi  $v0, $0, 0        # If size == 0, set return value 0
         addi $sp, $sp, 8        # Adjust sp
         jr $ra                  # Return
 
@@ -134,9 +133,9 @@ else:
 		addi  $a1, $t0, 0		#update the second argument
         jal   recursive_sum 
         lw    $t0, 0($sp)       # Restore size - 1 from stack
-        addi  $t1, $t1, 4     	# Compute & arr[ size + 1 ]
-        lw    $t2, 0($t1)       # t2 = arr[ size + 1 ]
-        add   $v0, $v0, $t2     # retval = $v0 + arr[size + 1]
+        addi  $t1, $t1, 4     	# Compute & arr[ 9 - size]
+        lw    $t2, 0($t1)       # t2 = arr[9 - size]
+        add   $v0, $v0, $t2     # retval = $v0 + arr[9 - size]
         lw    $ra, 4($sp)       # restore return address from stack         
         addi $sp, $sp, 8        # Adjust sp
         jr $ra                  # Return

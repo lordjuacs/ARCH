@@ -12,45 +12,45 @@ module testbench();
   wire [31:0] writedata, dataadr;
   wire        memwrite;
 
+
   // instantiate device to be tested
   top dut(clk, reset, writedata, dataadr, memwrite);
   
   // initialize test
   initial
     begin
-      reset <= 1; # 22; reset <=0;
+      reset <= 1; # 22; reset <= 0;
     end
 
   // generate clock to sequence tests
   always
     begin
-      clk <= 1; # 5;
-      clk <= 0; # 5;
+      clk <= 1; # 5; clk <= 0; # 5;
     end
 
   // check that 7 gets written to address 84
+ 
   always@(negedge clk)
     begin
-    $display("ADDRESS  --   ", dataadr);
-    $display("WRITEDATA --   ", writedata);
-     $display("MEMWRITE --   ", memwrite);
-     $display("CLK --   ", clk);
-     $display("RESET --   ", reset);
-    $display("\n");
+       $display(" DATAADR  --- ", dataadr);
+          $display("WRITEDATA  --- ", writedata);
       if(memwrite) begin
         if(dataadr === 84 & writedata === 7) begin
-          $display("Simulation succeeded");
+          $display("\nSimulation succeeded");
           $stop;
         end else if (dataadr !== 80) begin
-          $display("Simulation failed");
+          $display("\nSimulation failed");
+          $display("DATAADR  --- ", dataadr);
+          $display("WRITEDATA  --- ", writedata);
           $stop;
         end
       end
     end
-     initial begin
-                $dumpfile("lab07.vcd");   
-                $dumpvars;
-        end     
+    	initial begin
+		$dumpfile("lab07.vcd");	
+		$dumpvars;
+	end	
+
 endmodule
 
 

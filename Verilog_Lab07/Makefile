@@ -1,5 +1,5 @@
-all: a.out
-a.out:
-	iverilog -o a.out mips.v mipsparts.v mipsmem.v mipstop.v mipstest.v ALUnew.v
+all: single.exe
+single.exe:
+	iverilog -o single.exe mips.v mipsparts.v mipsmem.v mipstop.v mipstest.v ALUnew.v
 clean:
-	rm a.out
+	rm single.exe

@@ -34,6 +34,7 @@ module adder_substractor (a, b, s, y);
 	output [31:0] y;
 	mux2x1  first_mux(b, ~b, s, con);
 	Adder   first_adder(a, con, s, y);
+	
 endmodule
 
 module stl  (a, s, y);
@@ -47,25 +48,26 @@ module stl  (a, s, y);
 	reg [31:0] extend;
 	output [31:0] y;
 	always @(*)begin
-		extend = {32{a[31]}};	
+		extend = {31'b0,a[31]};	
 	end
 
 	mux2x1  first_mux(a, extend, s, y);
+	
 endmodule
 
-module a_part  (a, b, op0, op2, arithout);
+module a_part  (a, b, op, arithout);
 	    //2 1 0		
 	//ADD 0 1 0
 	//SUB 1 1 0
 	
 	//STL 1 1 1
 	input [31:0] a, b;
-	input op0, op2;
+	input [2:0] op;
 	wire [31:0] addout;
-	output [31:0] arithout;
-
-	adder_substractor  first_adder_substractor(a, b, op2, addout);
-	stl  first_stl(addout, op0, arithout);
+	output  [31:0] arithout;
+	
+	adder_substractor  first_adder_substractor(a, b, op[2], addout);
+	stl  first_stl(addout, op[0], arithout);
 endmodule
 
 module l_part (a, b, op, logicout);
@@ -118,7 +120,7 @@ module alu (a, b, op, result, cero);
 	//logic
 	//AND 0 0 0
 	//OR  0 0 1  
-		a_part  a_block(a, b, op[0], op[2], arithout);
+		a_part  a_block(a, b, op, arithout);
 		
 		l_part  l_block(a, b, op, logicout);
 		

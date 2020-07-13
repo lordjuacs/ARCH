@@ -55,7 +55,7 @@ module flopr #(parameter WIDTH = 8)
   end
 endmodule
 
-/*module flopenr #(parameter WIDTH = 8)
+module flopenr #(parameter WIDTH = 8)
                 (input               clk, reset,
                  input               en,
                  input   [WIDTH-1:0] d, 
@@ -67,7 +67,7 @@ endmodule
     else if (en)    q <= d;
   end
 endmodule
-*/
+
 module mux2 #(parameter WIDTH = 8)
              (input   [WIDTH-1:0] d0, d1, 
               input               s, 

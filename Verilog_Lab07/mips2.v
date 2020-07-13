@@ -66,7 +66,7 @@ module maindec(input   [5:0] op,
 
   assign {regwrite, regdst, alusrc,
           branch, memwrite,
-          memtoreg, jump, aluop,bne} = controls;
+          memtoreg, jump, aluop, bne} = controls;
 
   always @(*)
     case(op)
@@ -76,7 +76,7 @@ module maindec(input   [5:0] op,
       6'b000100: controls <= 10'b0001000010; //BEQ
       6'b001000: controls <= 10'b1010000000; //ADDI
       6'b000010: controls <= 10'b0000001000; //J
-      6'b001101: controls <= 10'b1010000100; //ORI
+      6'b001101: controls <= 10'b1010000110; //ORI
       6'b000101: controls <= 10'b0000000011; //BNE
       default:   controls <= 10'bxxxxxxxxxx; //???
     endcase
@@ -91,7 +91,7 @@ module aludec(input   [5:0] funct,
     case(aluop)
       2'b00: alucontrol <= 3'b010;  // add
       2'b01: alucontrol <= 3'b110;  // sub
-      //2'b11: alucontrol <= 3'b001;  // or
+      2'b11: alucontrol <= 3'b001;  // or
       default: case(funct)          // RTYPE
           6'b100000: alucontrol <= 3'b010; // ADD
           6'b100010: alucontrol <= 3'b110; // SUB

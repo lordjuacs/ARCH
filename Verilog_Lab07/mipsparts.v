@@ -37,11 +37,17 @@ module sl2(input  [31:0] a,
   assign y = {a[29:0], 2'b00};
 endmodule
 
-module signext(input   [15:0] a,
-               output  [31:0] y);
-              
-  assign y = {{16{a[15]}}, a};
+module signext(input   [15:0] a,input [2:0]alucontrol,
+               output  reg[31:0] y);
+         
+   always @(*)
+   case(alucontrol)
+   	3'b001:	y ={16'b0, a};
+   	default:  y = {{16{a[15]}}, a};
+   	endcase
+   	
 endmodule
+
 
 module flopr #(parameter WIDTH = 8)
               (input               clk, reset,

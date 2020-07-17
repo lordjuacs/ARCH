@@ -21,15 +21,15 @@ module mips(input          clk, reset,
 
   wire        memtoreg, branch,
                pcsrc, zero,
-               alusrc, regdst, regwrite, jump;
+               alusrc, regdst, regwrite, jump, bne;
   wire  [2:0]  alucontrol;
 
   controller c(instr[31:26], instr[5:0], zero,
                memtoreg, memwrite, pcsrc,
-               alusrc, regdst, regwrite, jump,
+               alusrc, regdst, regwrite, jump, bne,
                alucontrol);
   datapath dp(clk, reset, memtoreg, pcsrc,
-              alusrc, regdst, regwrite, jump,
+              alusrc, regdst, regwrite, jump, bne,
               alucontrol,
               zero, pc, instr,
               aluout, writedata, readdata);
@@ -40,43 +40,47 @@ module controller(input   [5:0] op, funct,
                   output        memtoreg, memwrite,
                   output        pcsrc, alusrc,
                   output        regdst, regwrite,
-                  output        jump,
+                  output        jump, bne,
                   output  [2:0] alucontrol);
 
   wire [1:0] aluop;
   wire       branch;
 
   maindec md(op, memtoreg, memwrite, branch,
-             alusrc, regdst, regwrite, jump,
+             alusrc, regdst, regwrite, jump, bne,
              aluop);
   aludec  ad(funct, aluop, alucontrol);
 
-  assign  pcsrc = zero & branch;
+  assign  pcsrc =  (~zero & bne) | (zero & branch);
+  //assign  pcsrc = zero & branch;
 endmodule
 
 module maindec(input   [5:0] op,
                output        memtoreg, memwrite,
                output        branch, alusrc,
                output        regdst, regwrite,
-               output        jump,
+               output        jump, bne,
                output  [1:0] aluop);
 
-  reg [8:0] controls;
+  reg [9:0] controls;
 
   assign {regwrite, regdst, alusrc,
           branch, memwrite,
-          memtoreg, jump, aluop} = controls;
+          memtoreg, jump, aluop, bne} = controls;
 
   always @(*)
     case(op)
-      6'b000000: controls <= 9'b110000010; //Rtype
-      6'b100011: controls <= 9'b101001000; //LW
-      6'b101011: controls <= 9'b001010000; //SW
-      6'b000100: controls <= 9'b000100001; //BEQ
-      6'b001000: controls <= 9'b101000000; //ADDI
-      6'b000010: controls <= 9'b000000100; //J
-      default:   controls <= 9'bxxxxxxxxx; //???
+      6'b000000: controls <= 10'b1100000100; //Rtype
+      6'b100011: controls <= 10'b1010010000; //LW
+      6'b101011: controls <= 10'b0010100000; //SW
+      6'b000100: controls <= 10'b0001000010; //BEQ
+      6'b001000: controls <= 10'b1010000000; //ADDI
+      6'b000010: controls <= 10'b0000001000; //J 
+      6'b001101: controls <= 10'b1010000110; //ORI 
+      6'b000101: controls <= 10'b0000000011; //BNE
+      default:   controls <= 10'bxxxxxxxxxx; //???
     endcase
+  
 endmodule
 
 module aludec(input   [5:0] funct,
@@ -87,7 +91,7 @@ module aludec(input   [5:0] funct,
     case(aluop)
       2'b00: alucontrol <= 3'b010;  // add
       2'b01: alucontrol <= 3'b110;  // sub
-      //2'b11: alucontrol <= 3'bxxx;
+      2'b11: alucontrol <= 3'b001;  // or
       default: case(funct)          // RTYPE
           6'b100000: alucontrol <= 3'b010; // ADD
           6'b100010: alucontrol <= 3'b110; // SUB
@@ -102,7 +106,7 @@ endmodule
 module datapath(input          clk, reset,
                 input          memtoreg, pcsrc,
                 input          alusrc, regdst,
-                input          regwrite, jump,
+                input          regwrite, jump, bne,
                 input   [2:0]  alucontrol,
                 output         zero,
                 output  [31:0] pc,
@@ -118,6 +122,7 @@ module datapath(input          clk, reset,
 
   // next PC logic
   flopr #(32) pcreg(clk, reset, pcnext, pc);
+  //flopenr #(32) pcreg(clk, reset, ... ,pcnext, pc);
   adder       pcadd1(pc, 32'b100, pcplus4);
   sl2         immsh(signimm, signimmsh);
   adder       pcadd2(pcplus4, signimmsh, pcbranch);
@@ -135,7 +140,8 @@ module datapath(input          clk, reset,
                     regdst, writereg);
   mux2 #(32)  resmux(aluout, readdata,
                      memtoreg, result);
-  signext     se(instr[15:0], signimm);
+  
+  signext     se(instr[15:0], alucontrol, signimm);
 
   // ALU logic
   mux2 #(32)  srcbmux(writedata, signimm, alusrc,

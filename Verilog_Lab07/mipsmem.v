@@ -25,7 +25,7 @@ module imem(input   [5:0]  a,
 
   initial
     begin
-      $readmemh("memfile2.dat",RAM, 0, 11); // initialize memory
+      $readmemh("memfile.dat",RAM, 0, 17); // initialize memory
 
     end
 

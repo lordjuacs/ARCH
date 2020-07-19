@@ -1,6 +1,3 @@
-//------------------------------------------------
-// mipsparts.sv
-// Updated to SystemVerilog - Harris Harris version
 // Components used in MIPS processor
 //------------------------------------------------
 

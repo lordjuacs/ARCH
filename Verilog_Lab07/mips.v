@@ -1,17 +1,5 @@
-//--------------------------------------------------------------
-// mips.sv
-// Updated to SystemVerilog - Harris Harris version
 // Single-cycle MIPS processor
 //--------------------------------------------------------------
-
-// files needed for simulation:
-//  mipsttest.v
-//  mipstop.v
-//  mipsmem.v
-//  mips.v
-//  mipsparts.v
-
-// single-cycle MIPS processor
 module mips(input          clk, reset,
             output  [31:0] pc,
             input   [31:0] instr,

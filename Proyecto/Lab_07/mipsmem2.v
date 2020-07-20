@@ -1,10 +1,5 @@
+// External memories used by MIPS single-cycleprocessor
 //------------------------------------------------
-// mipsmemsingle.sv
-// Updated to SystemVerilog - Harris Harris version
-// External memories used by MIPS single-cycle
-// processor
-//------------------------------------------------
-
 module dmem(input          clk, we,
             input   [31:0] a, wd,
             output  [31:0] rd);

@@ -3,7 +3,7 @@
 // Multicycle MIPS processor
 //------------------------------------------------
 
-module mips(input          clk, reset,
+/*module mips(input          clk, reset,
             output  [31:0] adr, writedata,
             output         memwrite,
             input   [31:0] readdata);
@@ -24,7 +24,7 @@ module mips(input          clk, reset,
               alusrcb, pcsrc, alucontrol,
               op, funct, zero,
               adr, writedata, readdata);
-endmodule
+endmodule*/
 
 module controller(input         clk, reset,
                   input   [5:0] op, funct,
@@ -140,7 +140,7 @@ module maindec(input         clk, reset,
       BEQEX:   controls <= 15'h0605;
 	  ADDIEX:  controls <= 15'h0420;
 	  ADDIWB:  controls <= 15'h0800;
-	  JEX:     controls <= 15'h
+	  JEX:     controls <= 15'h4008;	
       default: controls <= 15'hxxxx; // should never happen
     endcase
 endmodule

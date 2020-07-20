@@ -1,3 +1,5 @@
+// ALU for MIPS processor
+//------------------------------------------------
 module Adder (a, b, s, y);
 	    //2 1 0		
 	//ADD 0 1 0

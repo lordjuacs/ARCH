@@ -1,6 +1,4 @@
 //------------------------------------------------
-// mipstest.sv
-// Updated to SystemVerilog - Harris Harris version
 // Testbench for MIPS processor
 //------------------------------------------------
 

@@ -29,7 +29,7 @@ module testbench();
     end
 
   initial begin
-  		opcode = 6'b100011; funct = 6'bx; zero = 0; //lw
+  		  opcode = 6'b100011; funct = 6'bx; zero = 0; //lw
   	#50 opcode = 6'b101011; funct = 6'bx; zero = 0; //sw
   	#40 opcode = 6'b000100; funct = 6'bx; zero = 0; //beq - not taken
   	#30 opcode = 6'b000100; funct = 6'bx; zero = 1; //beq - taken
@@ -50,6 +50,3 @@ module testbench();
 	end	
 
 endmodule
-
-
-

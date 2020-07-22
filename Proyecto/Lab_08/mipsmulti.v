@@ -61,8 +61,8 @@ module maindec(input         clk, reset,
                output  [1:0] alusrcb, pcsrc,
                output  [1:0] aluop);
 
-  parameter   FETCH   = 4'b0000;    // State 0
-  parameter   DECODE  = 4'b0001;    // State 1
+  parameter   FETCH   = 4'b0000;  // State 0
+  parameter   DECODE  = 4'b0001;  // State 1
   parameter   MEMADR  = 4'b0010;	// State 2
   parameter   MEMRD   = 4'b0011;	// State 3
   parameter   MEMWB   = 4'b0100;	// State 4

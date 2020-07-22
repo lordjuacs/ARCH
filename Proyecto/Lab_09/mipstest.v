@@ -45,7 +45,7 @@ module testbench();
       end
     end
     	initial begin
-		$dumpfile("lab07.vcd");	
+		$dumpfile("lab09.vcd");	
 		$dumpvars;
 	end	
 

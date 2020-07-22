@@ -3,7 +3,7 @@
 // Multicycle MIPS processor
 //------------------------------------------------
 
-/*module mips(input          clk, reset,
+module mips(input          clk, reset,
             output  [31:0] adr, writedata,
             output         memwrite,
             input   [31:0] readdata);
@@ -24,7 +24,7 @@
               alusrcb, pcsrc, alucontrol,
               op, funct, zero,
               adr, writedata, readdata);
-endmodule*/
+endmodule
 
 module controller(input         clk, reset,
                   input   [5:0] op, funct,
@@ -131,32 +131,24 @@ module maindec(input         clk, reset,
     case(state)
       FETCH:   controls <= 15'h5010;
       DECODE:  controls <= 15'h0030;
-	  MEMADR:  controls <= 15'h0420;
-	  MEMRD:   controls <= 15'h0100;
+	    MEMADR:  controls <= 15'h0420;
+	    MEMRD:   controls <= 15'h0100;
       MEMWB:   controls <= 15'h0880;
   	  MEMWR:   controls <= 15'h2100;
-	  RTYPEEX: controls <= 15'h0402;
-	  RTYPEWB: controls <= 15'h0840;
+	    RTYPEEX: controls <= 15'h0402;
+	    RTYPEWB: controls <= 15'h0840;
       BEQEX:   controls <= 15'h0605;
-	  ADDIEX:  controls <= 15'h0420;
-	  ADDIWB:  controls <= 15'h0800;
-	  JEX:     controls <= 15'h4008;	
+	    ADDIEX:  controls <= 15'h0420;
+	    ADDIWB:  controls <= 15'h0800;
+	    JEX:     controls <= 15'h4008;	
       default: controls <= 15'hxxxx; // should never happen
     endcase
 endmodule
 
 
-
-
-
-
-
-
 module aludec(input   [5:0] funct,
               input   [1:0] aluop,
-              output reg [2:0] alucontrol);
-              
-              
+              output reg [2:0] alucontrol);         
 	always @(*)
 		case(aluop)
 		 2'b00: alucontrol <= 3'b010;
@@ -167,7 +159,7 @@ module aludec(input   [5:0] funct,
 			6'b100100: alucontrol <= 3'b000; //and
 			6'b100101: alucontrol <= 3'b001; //or
 			6'b101010: alucontrol <= 3'b111; //slt
-			default:   alucontrol <= 3'bxxx; //F
+			default:   alucontrol <= 3'bxxx; //???
           endcase
 		endcase
 endmodule
@@ -189,69 +181,53 @@ endmodule
 // the instruction register is instantiated as a 32-bit flopenr.
 // The other submodules are likewise instantiated.
 
-/*module datapath(input  logic        clk, reset,
-                input  logic        pcen, irwrite, regwrite,
-                input  logic        alusrca, iord, memtoreg, regdst,
-                input  logic [1:0]  alusrcb, pcsrc, 
-                input  logic [2:0]  alucontrol,
-                output logic [5:0]  op, funct,
-                output logic        zero,
-                output logic [31:0] adr, writedata, 
-                input  logic [31:0] readdata);
+module datapath(input          clk, reset,
+                input          pcen, irwrite, regwrite,
+                input          alusrca, 
+                input          iord, memtoreg, regdst,
+                input   [1:0]  alusrcb, pcsrc, 
+                input   [2:0]  alucontrol,
+                output  [5:0]  op, funct,
+                output         zero,
+                output  [31:0] adr, writedata, 
+                input   [31:0] readdata);
 
   // Below are the internal signals of the datapath module.
-
-  logic [4:0]  writereg;
-  logic [31:0] pcnext, pc;
-  logic [31:0] instr, data, srca, srcb;
-  logic [31:0] a;
-  logic [31:0] aluresult, aluout;
-  logic [31:0] signimm;   // the sign-extended immediate
-  logic [31:0] signimmsh;	// the sign-extended immediate shifted left by 2
-  logic [31:0] wd3, rd1, rd2;
+  wire [4:0]  writereg;
+  wire [31:0] pcnext, pc;
+  wire [31:0] instr, data, srca, srcb;
+  wire [31:0] a;
+  wire [31:0] aluresult, aluout;
+  wire [31:0] signimm;   // the sign-extended immediate
+  wire [31:0] signimmsh;	// the sign-extended immediate shifted left by 2
+  wire [31:0] wd3, rd1, rd2;
 
   // op and funct fields to controller
   assign op = instr[31:26];
   assign funct = instr[5:0];
 
-  // Your datapath hardware goes below.  Instantiate each of the submodules
-  // that you need.  Remember that alu's, mux's and various other 
-  // versions of parameterizable modules are available in mipsparts.sv
-  // from Lab 9. You'll likely want to include this verilog file in your
-  // simulation.
-
-  // We've included parameterizable 3:1 and 4:1 muxes below for your use.
-
-  // Remember to give your instantiated modules applicable names
-  // such as pcreg (PC register), wdmux (Write Data Mux), etc.
-  // so it's easier to understand.
-
-  // ADD CODE HERE
-
   // datapath
+  flopenr #(32) pcreg(clk, reset, pcen, pcnext, pc);
+  mux2    #(32) adrmux(pc, aluout, iord, adr);
+  flopenr #(32) instrreg(clk, reset, irwrite, readdata, instr);
+  flopr   #(32) datareg(clk, reset, readdata, data);
+
+  mux2    #(5)  regdstmux(instr[20:16], instr[15:11], regdst, writereg);
+  mux2    #(32) wdmux(aluout, data, memtoreg, wd3);
+  regfile regf(clk, regwrite, instr[25:21], instr[20:16],
+            writereg, wd3, rd1, rd2);
+
+  signext se(instr[15:0], signimm);
+  sl2 immsh(signimm, signimmsh);
+
+  flopr #(32) areg(clk, reset, rd1, a);
+  flopr #(32) breg(clk, reset, rd2, writedata);
+  mux2  #(32) srcamux(pc, a, alusrca, srca);
+  mux4  #(32) srcbmux(writedata, 4, signimm, signimmsh, alusrcb, srcb);
+
+  alu     alu(srca, srcb, alucontrol, aluresult, zero);
+  flopr   #(32) alureg(clk, reset, aluresult, aluout);
+  mux3    #(32) pcmux(aluresult, aluout, {pc[31:28], instr[25:0], 2'b00},
+          pcsrc, pcnext);
   
 endmodule
-
-
-module mux3 #(parameter WIDTH = 8)
-             (input  logic [WIDTH-1:0] d0, d1, d2,
-              input  logic [1:0]       s, 
-              output logic [WIDTH-1:0] y);
-
-  assign #1 y = s[1] ? d2 : (s[0] ? d1 : d0); 
-endmodule
-
-module mux4 #(parameter WIDTH = 8)
-             (input  logic [WIDTH-1:0] d0, d1, d2, d3,
-              input  logic [1:0]       s, 
-              output logic [WIDTH-1:0] y);
-
-   always_comb
-      case(s)
-         2'b00: y <= d0;
-         2'b01: y <= d1;
-         2'b10: y <= d2;
-         2'b11: y <= d3;
-      endcase
-endmodule*/
-

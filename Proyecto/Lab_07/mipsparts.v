@@ -1,6 +1,5 @@
 // Components used in MIPS processor
 //------------------------------------------------
-
 module regfile(input          clk, 
                input          we3, 
                input   [4:0]  ra1, ra2, wa3, 
@@ -13,7 +12,6 @@ module regfile(input          clk,
   // read two ports combinationally
   // write third port on rising edge of clock
   // register 0 hardwired to 0
-
   always@(posedge clk)
     if (we3) rf[wa3] <= wd3;	
 
@@ -34,17 +32,16 @@ module sl2(input  [31:0] a,
   assign y = {a[29:0], 2'b00};
 endmodule
 
+//Implementamos el signextend de manera simple.
+//Cuando es ORI hace zeroextend, sino hace signextend
 module signext(input   [15:0] a,input [2:0]alucontrol,
-               output  reg[31:0] y);
-         
+               output  reg[31:0] y);   
    always @(*)
    case(alucontrol)
    	3'b001:	y ={16'b0, a};
    	default:  y = {{16{a[15]}}, a};
    	endcase
-   	
 endmodule
-
 
 module flopr #(parameter WIDTH = 8)
               (input               clk, reset,

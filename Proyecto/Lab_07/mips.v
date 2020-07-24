@@ -1,5 +1,5 @@
 // Single-cycle MIPS processor
-//--------------------------------------------------------------
+//--------------------------------------------
 module mips(input          clk, reset,
             output  [31:0] pc,
             input   [31:0] instr,
@@ -38,9 +38,10 @@ module controller(input   [5:0] op, funct,
              alusrc, regdst, regwrite, jump, bne,
              aluop);
   aludec  ad(funct, aluop, alucontrol);
+  //Modificacion: se cambia el "pcsrc = zero & branch",
+  //para que permita la instruccion de bne
 
   assign  pcsrc =  (~zero & bne) | (zero & branch);
-  //assign  pcsrc = zero & branch;
 endmodule
 
 module maindec(input   [5:0] op,
@@ -49,7 +50,8 @@ module maindec(input   [5:0] op,
                output        regdst, regwrite,
                output        jump, bne,
                output  [1:0] aluop);
-
+  //Se amplia un bit a controls, para la
+  //senal de BNE
   reg [9:0] controls;
 
   assign {regwrite, regdst, alusrc,
@@ -64,8 +66,8 @@ module maindec(input   [5:0] op,
       6'b000100: controls <= 10'b0001000010; //BEQ
       6'b001000: controls <= 10'b1010000000; //ADDI
       6'b000010: controls <= 10'b0000001000; //J 
-      6'b001101: controls <= 10'b1010000110; //ORI 
-      6'b000101: controls <= 10'b0000000011; //BNE
+      6'b001101: controls <= 10'b1010000110; //ORI Controls determinados para ORI 
+      6'b000101: controls <= 10'b0000000011; //BNE Controls determinados para BNE
       default:   controls <= 10'bxxxxxxxxxx; //???
     endcase
   
@@ -79,7 +81,7 @@ module aludec(input   [5:0] funct,
     case(aluop)
       2'b00: alucontrol <= 3'b010;  // add
       2'b01: alucontrol <= 3'b110;  // sub
-      2'b11: alucontrol <= 3'b001;  // or
+      2'b11: alucontrol <= 3'b001;  // or ALUOP nuevo para instruccion OR
       default: case(funct)          // RTYPE
           6'b100000: alucontrol <= 3'b010; // ADD
           6'b100010: alucontrol <= 3'b110; // SUB
@@ -110,7 +112,6 @@ module datapath(input          clk, reset,
 
   // next PC logic
   flopr #(32) pcreg(clk, reset, pcnext, pc);
-  //flopenr #(32) pcreg(clk, reset, ... ,pcnext, pc);
   adder       pcadd1(pc, 32'b100, pcplus4);
   sl2         immsh(signimm, signimmsh);
   adder       pcadd2(pcplus4, signimmsh, pcbranch);
@@ -119,7 +120,6 @@ module datapath(input          clk, reset,
   mux2 #(32)  pcmux(pcnextbr, {pcplus4[31:28], 
                     instr[25:0], 2'b00}, 
                     jump, pcnext);
-
   // register file logic
   regfile     rf(clk, regwrite, instr[25:21],
                  instr[20:16], writereg,
@@ -128,12 +128,12 @@ module datapath(input          clk, reset,
                     regdst, writereg);
   mux2 #(32)  resmux(aluout, readdata,
                      memtoreg, result);
-  
-  signext     se(instr[15:0], alucontrol, signimm);
-
+    signext     se(instr[15:0], alucontrol, signimm);
   // ALU logic
   mux2 #(32)  srcbmux(writedata, signimm, alusrc,
                       srcb);
+  //Modificación de los puertos para que coincidan
+  //con nuestro ALU
   alu     alu(.a(srca), .b(srcb), .op(alucontrol),
                   .result(aluout), .cero(zero));
 endmodule

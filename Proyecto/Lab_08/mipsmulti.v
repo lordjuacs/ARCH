@@ -3,29 +3,6 @@
 // Multicycle MIPS processor
 //------------------------------------------------
 
-/*module mips(input          clk, reset,
-            output  [31:0] adr, writedata,
-            output         memwrite,
-            input   [31:0] readdata);
-
-  wire        zero, pcen, irwrite, regwrite,
-               alusrca, iord, memtoreg, regdst;
-  wire [1:0]  alusrcb, pcsrc;
-  wire [2:0]  alucontrol;
-  wire [5:0]  op, funct;
-
-  controller c(clk, reset, op, funct, zero,
-               pcen, memwrite, irwrite, regwrite,
-               alusrca, iord, memtoreg, regdst, 
-               alusrcb, pcsrc, alucontrol);
-  datapath dp(clk, reset, 
-              pcen, irwrite, regwrite,
-              alusrca, iord, memtoreg, regdst,
-              alusrcb, pcsrc, alucontrol,
-              op, funct, zero,
-              adr, writedata, readdata);
-endmodule*/
-
 module controller(input         clk, reset,
                   input   [5:0] op, funct,
                   input         zero,
@@ -43,12 +20,9 @@ module controller(input         clk, reset,
              alusrca, branch, iord, memtoreg, regdst, 
              alusrcb, pcsrc, aluop);
   aludec  ad(funct, aluop, alucontrol);
-  
+  // Implementacion del pcen a partir de lo observado
+  // en el schematic
   assign pcen = (zero & branch) | pcwrite;
-  // ADD CODE HERE
-  // Add combinational logic (i.e. an assign statement) 
-  // to produce the PCEn signal (pcen) from the branch, 
-  // zero, and pcwrite signals
  
 endmodule
 
@@ -124,39 +98,29 @@ module maindec(input         clk, reset,
           alusrca, branch, iord, memtoreg, regdst,
           alusrcb, pcsrc, aluop} = controls;
 
-  // ADD CODE HERE
-  // Finish entering the output logic below.  We've entered the
-  // output logic for the first two states, S0 and S1, for you.
+  //Logica ouput para cada estado
   always @(*)
     case(state)
-      FETCH:   controls <= 15'h5010;
-      DECODE:  controls <= 15'h0030;
-	  MEMADR:  controls <= 15'h0420;
-	  MEMRD:   controls <= 15'h0100;
-      MEMWB:   controls <= 15'h0880;
-  	  MEMWR:   controls <= 15'h2100;
-	  RTYPEEX: controls <= 15'h0402;
-	  RTYPEWB: controls <= 15'h0840;
-      BEQEX:   controls <= 15'h0605;
-	  ADDIEX:  controls <= 15'h0420;
-	  ADDIWB:  controls <= 15'h0800;
-	  JEX:     controls <= 15'h4008;	
+      FETCH:   controls <= 15'h5010; //S0
+      DECODE:  controls <= 15'h0030; //S1
+	    MEMADR:  controls <= 15'h0420; //S2
+	    MEMRD:   controls <= 15'h0100; //S3
+      MEMWB:   controls <= 15'h0880; //S4
+  	  MEMWR:   controls <= 15'h2100; //S5
+	    RTYPEEX: controls <= 15'h0402; //S6
+	    RTYPEWB: controls <= 15'h0840; //S7
+      BEQEX:   controls <= 15'h0605; //S8
+	    ADDIEX:  controls <= 15'h0420; //S9
+	    ADDIWB:  controls <= 15'h0800; //S10
+	    JEX:     controls <= 15'h4008; //S11
       default: controls <= 15'hxxxx; // should never happen
     endcase
 endmodule
 
-
-
-
-
-
-
-
+//Implementacion del ALUDEC
 module aludec(input   [5:0] funct,
               input   [1:0] aluop,
               output reg [2:0] alucontrol);
-              
-              
 	always @(*)
 		case(aluop)
 		 2'b00: alucontrol <= 3'b010;
@@ -167,91 +131,7 @@ module aludec(input   [5:0] funct,
 			6'b100100: alucontrol <= 3'b000; //and
 			6'b100101: alucontrol <= 3'b001; //or
 			6'b101010: alucontrol <= 3'b111; //slt
-			default:   alucontrol <= 3'bxxx; //F
+			default:   alucontrol <= 3'bxxx; //???
           endcase
 		endcase
 endmodule
-
-  // ADD CODE HERE
-  // Complete the design for the ALU Decoder.
-  // Your design goes here.  Remember that this is a combinational 
-  // module. 
-
-  // Remember that you may also reuse any code from previous labs.
-
-
-
-// Complete the datapath module below for Lab 11.
-// You do not need to complete this module for Lab 10
-
-// The datapath unit is a structural verilog module.  That is,
-// it is composed of instances of its sub-modules.  For example,
-// the instruction register is instantiated as a 32-bit flopenr.
-// The other submodules are likewise instantiated.
-
-/*module datapath(input  logic        clk, reset,
-                input  logic        pcen, irwrite, regwrite,
-                input  logic        alusrca, iord, memtoreg, regdst,
-                input  logic [1:0]  alusrcb, pcsrc, 
-                input  logic [2:0]  alucontrol,
-                output logic [5:0]  op, funct,
-                output logic        zero,
-                output logic [31:0] adr, writedata, 
-                input  logic [31:0] readdata);
-
-  // Below are the internal signals of the datapath module.
-
-  logic [4:0]  writereg;
-  logic [31:0] pcnext, pc;
-  logic [31:0] instr, data, srca, srcb;
-  logic [31:0] a;
-  logic [31:0] aluresult, aluout;
-  logic [31:0] signimm;   // the sign-extended immediate
-  logic [31:0] signimmsh;	// the sign-extended immediate shifted left by 2
-  logic [31:0] wd3, rd1, rd2;
-
-  // op and funct fields to controller
-  assign op = instr[31:26];
-  assign funct = instr[5:0];
-
-  // Your datapath hardware goes below.  Instantiate each of the submodules
-  // that you need.  Remember that alu's, mux's and various other 
-  // versions of parameterizable modules are available in mipsparts.sv
-  // from Lab 9. You'll likely want to include this verilog file in your
-  // simulation.
-
-  // We've included parameterizable 3:1 and 4:1 muxes below for your use.
-
-  // Remember to give your instantiated modules applicable names
-  // such as pcreg (PC register), wdmux (Write Data Mux), etc.
-  // so it's easier to understand.
-
-  // ADD CODE HERE
-
-  // datapath
-  
-endmodule
-
-
-module mux3 #(parameter WIDTH = 8)
-             (input  logic [WIDTH-1:0] d0, d1, d2,
-              input  logic [1:0]       s, 
-              output logic [WIDTH-1:0] y);
-
-  assign #1 y = s[1] ? d2 : (s[0] ? d1 : d0); 
-endmodule
-
-module mux4 #(parameter WIDTH = 8)
-             (input  logic [WIDTH-1:0] d0, d1, d2, d3,
-              input  logic [1:0]       s, 
-              output logic [WIDTH-1:0] y);
-
-   always_comb
-      case(s)
-         2'b00: y <= d0;
-         2'b01: y <= d1;
-         2'b10: y <= d2;
-         2'b11: y <= d3;
-      endcase
-endmodule*/
-

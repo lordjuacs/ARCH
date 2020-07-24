@@ -43,12 +43,9 @@ module controller(input         clk, reset,
              alusrca, branch, iord, memtoreg, regdst, 
              alusrcb, pcsrc, aluop);
   aludec  ad(funct, aluop, alucontrol);
-  
+  // Implementacion del pcen a partir de lo observado
+  // en el schematic
   assign pcen = (zero & branch) | pcwrite;
-  // ADD CODE HERE
-  // Add combinational logic (i.e. an assign statement) 
-  // to produce the PCEn signal (pcen) from the branch, 
-  // zero, and pcwrite signals
  
 endmodule
 
@@ -61,8 +58,8 @@ module maindec(input         clk, reset,
                output  [1:0] alusrcb, pcsrc,
                output  [1:0] aluop);
 
-  parameter   FETCH   = 4'b0000;    // State 0
-  parameter   DECODE  = 4'b0001;    // State 1
+  parameter   FETCH   = 4'b0000;  // State 0
+  parameter   DECODE  = 4'b0001;  // State 1
   parameter   MEMADR  = 4'b0010;	// State 2
   parameter   MEMRD   = 4'b0011;	// State 3
   parameter   MEMWB   = 4'b0100;	// State 4
@@ -124,31 +121,29 @@ module maindec(input         clk, reset,
           alusrca, branch, iord, memtoreg, regdst,
           alusrcb, pcsrc, aluop} = controls;
 
-  // ADD CODE HERE
-  // Finish entering the output logic below.  We've entered the
-  // output logic for the first two states, S0 and S1, for you.
+  //Logica ouput para cada estado
   always @(*)
     case(state)
-      FETCH:   controls <= 15'h5010;
-      DECODE:  controls <= 15'h0030;
-	    MEMADR:  controls <= 15'h0420;
-	    MEMRD:   controls <= 15'h0100;
-      MEMWB:   controls <= 15'h0880;
-  	  MEMWR:   controls <= 15'h2100;
-	    RTYPEEX: controls <= 15'h0402;
-	    RTYPEWB: controls <= 15'h0840;
-      BEQEX:   controls <= 15'h0605;
-	    ADDIEX:  controls <= 15'h0420;
-	    ADDIWB:  controls <= 15'h0800;
-	    JEX:     controls <= 15'h4008;	
+      FETCH:   controls <= 15'h5010; //S0
+      DECODE:  controls <= 15'h0030; //S1
+	    MEMADR:  controls <= 15'h0420; //S2
+	    MEMRD:   controls <= 15'h0100; //S3
+      MEMWB:   controls <= 15'h0880; //S4
+  	  MEMWR:   controls <= 15'h2100; //S5
+	    RTYPEEX: controls <= 15'h0402; //S6
+	    RTYPEWB: controls <= 15'h0840; //S7
+      BEQEX:   controls <= 15'h0605; //S8
+	    ADDIEX:  controls <= 15'h0420; //S9
+	    ADDIWB:  controls <= 15'h0800; //S10
+	    JEX:     controls <= 15'h4008; //S11
       default: controls <= 15'hxxxx; // should never happen
     endcase
 endmodule
 
-
+//Implementacion del ALUDEC
 module aludec(input   [5:0] funct,
               input   [1:0] aluop,
-              output reg [2:0] alucontrol);         
+              output reg [2:0] alucontrol);
 	always @(*)
 		case(aluop)
 		 2'b00: alucontrol <= 3'b010;
@@ -163,23 +158,6 @@ module aludec(input   [5:0] funct,
           endcase
 		endcase
 endmodule
-
-  // ADD CODE HERE
-  // Complete the design for the ALU Decoder.
-  // Your design goes here.  Remember that this is a combinational 
-  // module. 
-
-  // Remember that you may also reuse any code from previous labs.
-
-
-
-// Complete the datapath module below for Lab 11.
-// You do not need to complete this module for Lab 10
-
-// The datapath unit is a structural verilog module.  That is,
-// it is composed of instances of its sub-modules.  For example,
-// the instruction register is instantiated as a 32-bit flopenr.
-// The other submodules are likewise instantiated.
 
 module datapath(input          clk, reset,
                 input          pcen, irwrite, regwrite,
@@ -212,13 +190,13 @@ module datapath(input          clk, reset,
   flopenr #(32) instrreg(clk, reset, irwrite, readdata, instr);
   flopr   #(32) datareg(clk, reset, readdata, data);
 
-  mux2    #(5)  regdstmux(instr[20:16], instr[15:11], regdst, writereg);
+  mux2    #(5)  rega3mux(instr[20:16], instr[15:11], regdst, writereg);
   mux2    #(32) wdmux(aluout, data, memtoreg, wd3);
   regfile regf(clk, regwrite, instr[25:21], instr[20:16],
             writereg, wd3, rd1, rd2);
 
   signext se(instr[15:0], signimm);
-  sl2 immsh(signimm, signimmsh);
+  sl2 immshifted(signimm, signimmsh);
 
   flopr #(32) areg(clk, reset, rd1, a);
   flopr #(32) breg(clk, reset, rd2, writedata);
